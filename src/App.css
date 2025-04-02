@@ -1,0 +1,124 @@
+/* Общий фон */
+body {
+  background: linear-gradient(135deg, #f0f8ff, #ffffff); /* Светлый градиент */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Контейнер игры */
+.game-container {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9); /* Белый фон с полупрозрачностью */
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Легкая тень */
+}
+
+/* Заголовок */
+.title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333; /* Темно-серый цвет для текста */
+  margin-bottom: 20px;
+}
+
+/* Статистика ходов */
+.moves {
+  font-size: 20px;
+  color: #555; /* Легкий серый */
+  margin-bottom: 20px;
+}
+
+/* Сообщение о выигрыше */
+.win-message {
+  font-size: 24px;
+  color: #4caf50; /* Зеленый для успешного завершения игры */
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+/* Сетка для карточек */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 100px);
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Стили карточек */
+.card {
+  width: 100px;
+  height: 100px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+/* Передняя сторона карточки */
+.card-front {
+  background: #e0e0e0; /* Светло-серый фон для передней стороны */
+  color: #333; /* Темный текст */
+}
+
+/* Задняя сторона карточки */
+.card-back {
+  background: #f9f9f9; /* Очень светлый фон для задней стороны */
+  color: #aaa; /* Бледно-серый текст */
+  transform: rotateY(180deg);
+}
+
+/* Кнопка сброса */
+.reset-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  background: #4caf50; /* Зеленый фон */
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.reset-button:hover {
+  background: #388e3c; /* Темный зеленый при наведении */
+}
+
+/* Эффекты при наведении на карточку */
+.card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.reset-button:hover {
+  transform: scale(1.05);
+}
